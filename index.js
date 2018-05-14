@@ -1,7 +1,8 @@
-const button = document.querySelector('button.greeting')
+const button = document.querySelector('button.change')
 
 function changeText(ev){
-    ev.target.textContent = "Clicked"
+    const heading = document.querySelector('h1.change')
+    heading.textContent = "You clicked the button!"
 }
 
 button.addEventListener('click', changeText)
