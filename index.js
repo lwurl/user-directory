@@ -1,9 +1,8 @@
 const button = document.querySelector('button.greeting')
 
-
 function changeText(){
-    alert('yeah')
+    const para = document.querySelector('p.greeting')
+    para.textContent = 'You clicked!'
 }
 
 button.addEventListener('click', changeText)
-
