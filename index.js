@@ -17,6 +17,20 @@ const renderListItem = function(text, isColor, favoriteColor){
     return item
 }
 
+const renderList = function(userName, age, favoriteColor){
+    // Create list
+    const list = document.createElement('ul')
+
+    // Create list items
+    list.appendChild(renderListItem(`Name: ${userName}`, false, null))
+
+    list.appendChild(renderListItem(`Age: ${age}`, false, null))
+
+    list.appendChild(renderListItem('Favorite Color: ', true, favoriteColor))
+
+    return list
+}
+
 const handleSubmit = function(ev) {
   ev.preventDefault()
   const users = document.querySelector('#users')
@@ -25,17 +39,7 @@ const handleSubmit = function(ev) {
   const age = f.age.value
   const favoriteColor = f.favoriteColor.value
 
-  // Create list
-  const list = document.createElement('ul')
-
-  // Create list items
-  list.appendChild(renderListItem(`Name: ${userName}`, false, null))
-
-  list.appendChild(renderListItem(`Age: ${age}`, false, null))
-
-  list.appendChild(renderListItem('Favorite Color: ', true, favoriteColor))
-
-  users.appendChild(list)
+  users.appendChild(renderList(userName, age, favoriteColor))
 
   f.reset()
   f.userName.focus()
