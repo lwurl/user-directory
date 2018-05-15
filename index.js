@@ -1,11 +1,13 @@
-const button = document.querySelector('button.change')
+const form = document.querySelector('#userForm')
 
-function changeText(ev){
-    const inputText = document.querySelector('#changeText')
-    const headings = document.querySelectorAll('h1')
-    const dropdown = document.querySelector('#headingChoice')
-    //debugger
-    headings[dropdown.value].textContent = inputText.value
+const handleSubmit = function(ev) {
+  ev.preventDefault()
+  const users = document.querySelector('#users')
+  const f = ev.target
+  const userName = f.userName.value
+  users.innerHTML += '<p>' + userName + '</p>'
+
+  f.userName.value = ''
 }
 
-button.addEventListener('click', changeText)
+form.addEventListener('submit', handleSubmit)
