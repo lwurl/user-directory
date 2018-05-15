@@ -5,9 +5,11 @@ const handleSubmit = function(ev) {
   const users = document.querySelector('#users')
   const f = ev.target
   const userName = f.userName.value
-  users.innerHTML += '<p>' + userName + '</p>'
+  const age = f.age.value
+  users.innerHTML += '<p>' + userName + ", " + age + '</p>'
 
   f.userName.value = ''
+  f.age.value = ''
 }
 
 form.addEventListener('submit', handleSubmit)
