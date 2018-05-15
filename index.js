@@ -8,11 +8,19 @@ const handleSubmit = function(ev) {
   const age = f.age.value
   const favoriteColor = f.favoriteColor.value
 
-  const p = document.createElement('p')
-  p.textContent = `${userName}, ${age}`
-  p.style.backgroundColor = favoriteColor
+  // Create list
+  const list = document.createElement('ul')
 
-  users.appendChild(p)
+  // Create list items
+  const nameItem = document.createElement('li')
+  nameItem.textContent = `Name: ${userName}`
+  list.appendChild(nameItem)
+
+  const ageItem = document.createElement('li')
+  ageItem.textContent = `Age: ${age}`
+  list.appendChild(ageItem)
+
+  users.appendChild(list)
 
   f.reset()
   f.userName.focus()
