@@ -8,6 +8,15 @@ const renderColor = function(favoriteColor){
     return colorDiv
 }
 
+const renderListItem = function(text, isColor, favoriteColor){
+    const item = document.createElement('li')
+    item.textContent = text
+    if (isColor){
+        item.appendChild(renderColor(favoriteColor))
+    }
+    return item
+}
+
 const handleSubmit = function(ev) {
   ev.preventDefault()
   const users = document.querySelector('#users')
@@ -20,19 +29,11 @@ const handleSubmit = function(ev) {
   const list = document.createElement('ul')
 
   // Create list items
-  const nameItem = document.createElement('li')
-  nameItem.textContent = `Name: ${userName}`
-  list.appendChild(nameItem)
+  list.appendChild(renderListItem(`Name: ${userName}`, false, null))
 
-  const ageItem = document.createElement('li')
-  ageItem.textContent = `Age: ${age}`
-  list.appendChild(ageItem)
+  list.appendChild(renderListItem(`Age: ${age}`, false, null))
 
-  const colorItem = document.createElement('li')
-  colorItem.textContent = 'Favorite Color: '
-
-  colorItem.appendChild(renderColor(favoriteColor))
-  list.appendChild(colorItem)
+  list.appendChild(renderListItem('Favorite Color: ', true, favoriteColor))
 
   users.appendChild(list)
 
