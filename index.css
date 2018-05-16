@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
 body {
-    font-family: sans-serif;
-    background-color: deepskyblue;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: whitesmoke;
 }
+
 button:hover{
     background-color: whitesmoke;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
 }
